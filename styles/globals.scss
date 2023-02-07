@@ -1,0 +1,574 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "bootstrap/scss/bootstrap";
+@import "variables";
+@import "navbar-global";
+@import "card";
+@import "yamm";
+@import "background";
+@import "text";
+@import "sites";
+@import "media";
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+:root {
+  --bs-font-sans-serif: "Poppins", sans-serif;
+}
+.btn {
+  --bs-btn-border-width: 2px;
+}
+
+#carousel-capa-menu {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.6) 50%,
+    transparent
+  );
+  position: absolute;
+  z-index: 999;
+  padding-top: 20px;
+
+  .nav-link.show {
+    @extend .bg-dark;
+  }
+
+  .nav-link {
+    @extend .text-light;
+    transition: inherit !important;
+    height: 70px;
+    border-radius: inherit !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
+  .dropdown-menu {
+    @extend .text-light;
+    @extend .bg-dark;
+    @extend .p-3;
+    top: inherit !important;
+    margin-top: inherit !important;
+    border: inherit !important;
+    border-radius: 5px !important;
+
+    h4 {
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .dropdown-menu.show {
+    @extend .shadow-lg;
+  }
+}
+
+#carousel-capa {
+  .navbar-brand img {
+    height: 4rem;
+  }
+
+  .carousel-item {
+    background-size: cover !important;
+    background-position: center center !important;
+    height: 70vh !important;
+    min-height: 600px !important;
+
+    @media (max-width: 991.98px) and (max-height: 950px) {
+      height: calc(100vh - 48px) !important;
+    }
+
+    .carousel-caption {
+      /*
+      text-align: inherit !important;
+      right: 50% !important;
+      */
+      bottom: 4rem !important;
+
+      /*
+      height: 100% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      */
+      @media (max-width: 991.98px) {
+        right: 5% !important;
+        left: 5% !important;
+      }
+
+      @extend .text-shadow;
+
+      h5 {
+        @include media-breakpoint-down(md) {
+          font-size: calc(1.525rem + 3.3vw);
+        }
+
+        @include media-breakpoint-up(lg) {
+          font-size: 2.5rem !important;
+        }
+
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      p {
+        @extend .lead;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  #carousel-item-0 {
+    @include media-breakpoint-down(sm) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-CELULAR-1.png");
+    }
+
+    @include media-breakpoint-up(md) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-1-tablet.png");
+    }
+
+    @include media-breakpoint-up(xl) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-1.png");
+    }
+  }
+
+  #carousel-item-1 {
+    @include media-breakpoint-down(sm) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-CELULAR-2.png");
+    }
+
+    @include media-breakpoint-up(md) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-2-tablet.png");
+    }
+
+    @include media-breakpoint-up(xl) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-2.png");
+    }
+  }
+
+  #carousel-item-2 {
+    @include media-breakpoint-down(sm) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-CELULAR-3.png");
+    }
+
+    @include media-breakpoint-up(md) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-3-tablet.png");
+    }
+
+    @include media-breakpoint-up(xl) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-site-novo-3.png");
+    }
+  }
+
+  #carousel-item-3 {
+    @include media-breakpoint-down(sm) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/FALE-COM-NOSSOS-COORDENADORES-celular.png");
+    }
+
+    @include media-breakpoint-up(md) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/FALE-COM-NOSSOS-COORDENADORES.png");
+    }
+
+    @include media-breakpoint-up(xl) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/FALE-COM-NOSSOS-COORDENADORES.png");
+    }
+  }
+
+  #carousel-item-4 {
+    @include media-breakpoint-down(sm) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-novos-cursos-3.png");
+    }
+
+    @include media-breakpoint-up(md) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-novos-cursos-2.png");
+    }
+
+    @include media-breakpoint-up(xl) {
+      background: url("https://fswceulp.nyc3.cdn.digitaloceanspaces.com/portal/home/capa/banner-rotativo-novos-cursos-1.png");
+    }
+  }
+}
+
+#secao-sua-jornada,
+#secao-conheca-o-ceulp {
+  .card {
+    .card-img-top {
+      height: 120px;
+    }
+  }
+}
+
+#secao-banners-destaque {
+  .card {
+    height: 150px;
+
+    .card-img {
+      height: 150px;
+    }
+
+    .card-img-overlay {
+      height: 150px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+#secao-noticias {
+  .card {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .card-noticia-destaque {
+    .card-img {
+      @include media-breakpoint-down(md) {
+        height: 300px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+      }
+    }
+
+    .card-img-overlay {
+      @include media-breakpoint-down(md) {
+        height: 300px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+      }
+    }
+
+    .card-title {
+      text-align: start !important;
+    }
+
+    a {
+      @extend .h1;
+      color: white !important;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .noticias-instituicao {
+    min-height: 460px;
+
+    .badge {
+      background-color: $aelbra-cor-principal;
+    }
+
+    .card-title {
+      @extend .h5;
+      @include max-lines(2, 1.5rem);
+    }
+
+    &__noticia {
+      a {
+        color: #333;
+        text-decoration: none;
+        @extend .h5;
+        @include max-lines(3, 1.5rem);
+      }
+
+      a:hover {
+        color: black;
+      }
+    }
+  }
+
+  .noticias-cursos {
+    padding-left: 15px;
+    border-left: 2px solid #eee;
+
+    &__noticia {
+      .badge {
+        background-color: $aelbra-cor-secundaria !important;
+        margin-bottom: 0.3rem;
+      }
+
+      padding-bottom: 1.5rem;
+
+      a {
+        color: #333;
+        text-decoration: none;
+        @include max-lines(2, 1.5rem);
+        @extend .h5;
+      }
+
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+.lista-calendario-datas,
+.lista-eventos {
+  .lista-calendario-item:not(last),
+  .lista-eventos-item:not(last) {
+    margin-bottom: 5px;
+  }
+
+  .data {
+    @extend .text-center;
+    background-color: $aelbra-cor-principal;
+    color: #f0f0f0;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    font-weight: bold;
+    width: 60px;
+  }
+}
+
+.lista-eventos {
+  a {
+    @extend .text-dark;
+    text-decoration: none;
+  }
+
+  a:hover .media-body {
+    text-decoration: underline;
+  }
+
+  .data {
+    @extend .bg-dark;
+    @extend .text-light;
+  }
+}
+
+#secao-calendario {
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .card {
+    height: 120px;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+#secao-vida-no-ceulp {
+  .card {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .card-vida-no-ceulp-destaque {
+    .card-img {
+      @include media-breakpoint-down(md) {
+        height: 300px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+      }
+    }
+
+    .card-img-overlay {
+      @include media-breakpoint-down(md) {
+        height: 300px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+      }
+    }
+  }
+}
+
+#secao-vem-pra-ulbra {
+  .ms-auto {
+    @include media-breakpoint-down(md) {
+      width: 100% !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 40% !important;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 35% !important;
+    }
+  }
+}
+
+#secao-servicos {
+  .lista-servicos {
+    .col {
+      align-content: center;
+      align-items: center;
+
+      a {
+        @extend .bg-light;
+        @extend .text-dark;
+        @extend .fw-bold;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-decoration: none;
+        text-align: center;
+        height: 150px;
+        transition: all 0.3s;
+
+        :nth-child(0) {
+          margin-top: 10px;
+        }
+      }
+
+      a:hover {
+        background-color: rgba(var(--bs-dark-rgb), 0.05) !important;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+#rodape {
+  background-color: #6c757d26;
+  padding-top: 3rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .endereco {
+    padding: 1rem;
+    background-color: #6c757d26;
+  }
+}
+
+#btnScrollToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 998;
+  cursor: pointer;
+}
+
+#secao-banners-destaque {
+  @include media-breakpoint-down(lg) {
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(33%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-33%);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .carousel-inner .carousel-item > div {
+      display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+      display: block;
+    }
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(100%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-100%);
+    }
+  }
+
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
+
+  /* medium and up screens */
+  @include media-breakpoint-up(lg) {
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+  }
+
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start {
+    transform: translateX(0);
+  }
+
+  .carousel-control-prev {
+    opacity: 1;
+    text-shadow: 2px 2px 4px #000000;
+    width: 70px;
+  }
+
+  .carousel-control-next {
+    opacity: 1;
+    text-shadow: 2px 2px 4px #000000;
+    width: 70px;
+  }
+}

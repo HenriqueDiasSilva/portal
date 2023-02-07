@@ -1,0 +1,30 @@
+.bg-cover {
+  background-size: cover !important;
+}
+
+.bg-center {
+  background-position: center center !important;
+}
+
+.parallax {
+  min-height: 15px;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 10%,
+    rgba(0, 0, 0, 0.3) 25%,
+    rgba(0, 0, 0, 0.1) 36%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
